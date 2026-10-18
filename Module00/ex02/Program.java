@@ -27,7 +27,11 @@ public class Program {
                     break;
                 String line  = scanner.nextLine();
                 if (isNumeric(line))
+                {
+                    if (line.equals("42"))
+                        break;
                     input.add(line);
+                }
                 else
                     throw new RuntimeException("invalid input");
             }
