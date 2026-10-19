@@ -1,20 +1,26 @@
 package ex00;
 
 public class Program{
+    
+    final static Long TEST_NUMBER = 479598L;
 
-    public static int sumOfString(String str)
+    public static int sumOfNumbers(Long  num)
     {
+        if (num == 0)
+            return 0;
         int sum = 0;
-        for ( char c : str.toCharArray())
+
+        while (num > 0)
         {
-            if (Character.isDigit(c))
-                sum += (((int)c)) - 48;
+            Long dig = num % 10;
+            num /= 10;
+            sum += dig;
         }
+        
         return sum;
     }
 
     public static void main(String[] args){
-    String number = "479598";
-    System.out.print(sumOfString(number));
+    System.out.print(sumOfNumbers(TEST_NUMBER));
   } 
 }

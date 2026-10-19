@@ -1,6 +1,6 @@
 package ex02;
 
-import static ex00.Program.sumOfString;
+import static ex00.Program.sumOfNumbers;
 import static ex01.Program.is_prime;
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class Program {
         if (str == null || str.isEmpty()) {
             return false;
         }
-        return str.chars().allMatch(Character::isDigit);
+        return str.chars().allMatch(c -> Character.isDigit(c) || c == ' ');;
     }
 
 
@@ -37,7 +37,7 @@ public class Program {
             }
             int sum = 0;
             for (String string : input)
-                if (is_prime((long) sumOfString(string)).getState() == true)
+                if (is_prime((long) sumOfNumbers(string)).getState() == true)
                     sum++;
             System.out.println("Count of coffee-request : " + sum);
         }
@@ -45,6 +45,5 @@ public class Program {
             System.err.println(e.getMessage()); 
         }
         scanner.close();
-
     }
 }
